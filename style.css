@@ -1,12 +1,95 @@
+:root {
+  --color-primary: hsl(160deg, 100%, 30%);
+  --color-secondary-light: hsl(45deg, 100%, 50%);
+  --color-secondary-dark: hsl(45deg, 100%, 40%);
+  --color-gray-black: hsl(0deg, 0%, 0%);
+  --color-gray-very-dark: hsl(0deg, 0%, 10%);
+  --color-gray-dark: hsl(0deg, 0%, 30%);
+  --color-gray-medium: hsl(0deg, 0%, 40%);
+  --color-gray-light: hsl(0deg, 0%, 60%);
+  --color-gray-white: hsl(0deg, 0%, 100%);
+
+  --font-0: 1rem;
+  --font-1: 1.25rem;
+  --font-2: 1.5rem;
+  --font-3: 2rem;
+
+  --space-missing: 4px;
+  --space-0: 8px;
+  --space-1: 16px;
+  --space-2: 24px;
+  --space-3: 32px;
+  --space-4: 48px;
+  --space-5: 64px;
+  --space-6: 96px;
+  --space-7: 128px;
+}
+
 * {
   box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
+  font-size: var(--font-0);
 }
 
-/* Add styles here! */
+.max-width-wrapper {
+  max-width: 70ch;
+  margin: 0 auto;
+}
+
+header {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  font-size: var(--font-3);
+  font-weight: bold;
+  margin-bottom: var(--space-4);
+}
+
+.intro-chunk {
+  max-width: 40ch;
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+}
+
+strong {
+  color: var(--color-primary);
+}
+
+main {
+  border-top: var(--space-missing) solid var(--color-gray-medium);
+  background-color: var(--color-gray-light);
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+
+.card {
+  background-color: var(--color-gray-white);
+  border-bottom: var(--space-missing) solid var(--color-gray-medium);
+  --card-hz-padding: var(--space-2);
+  padding-left: var(--card-hz-padding);
+  padding-right: var(--card-hz-padding);
+  padding-top: var(--space-0);
+}
+
+.indented-heading {
+  background-color: var(--color-secondary-light);
+  border-bottom: var(--space-missing) solid var(--color-secondary-dark);
+  padding: var(--space-0);
+  font-size: var(--font-0);
+  position: relative;
+  --left-offset: calc(var(--card-hz-padding) + var(--space-0));
+  left: calc(-1 * var(--left-offset));
+  padding-left: var(--left-offset);
+  padding-right: var(--card-hz-padding);
+  width: max-content;
+  margin: 0;
+  max-width: calc(100% + var(--left-offset));
+}
